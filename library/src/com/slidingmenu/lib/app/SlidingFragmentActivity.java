@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import by.intexsoft.android.common.worker.WorkerService;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.slidingmenu.lib.SlidingMenu;
 
-public class SlidingFragmentActivity extends SherlockFragmentActivity implements SlidingActivityBase {
+import de.meyle_mueller.okm.ui.OKMWorkerActivity;
+
+public class SlidingFragmentActivity extends OKMWorkerActivity implements SlidingActivityBase {
 
 	private SlidingActivityHelper mHelper;
 
@@ -147,6 +149,11 @@ public class SlidingFragmentActivity extends SherlockFragmentActivity implements
 		boolean b = mHelper.onKeyUp(keyCode, event);
 		if (b) return b;
 		return super.onKeyUp(keyCode, event);
+	}
+
+	@Override
+	public void onWorkerAvailable(WorkerService workerService) {
+		//Do nothing
 	}
 
 }
