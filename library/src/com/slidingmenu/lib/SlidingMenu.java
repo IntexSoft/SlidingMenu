@@ -550,10 +550,10 @@ public class SlidingMenu extends RelativeLayout {
 	 *
 	 * @return Whether or not the behind view is showing
 	 */
-	public boolean isMenuShowing() {
-		return mViewAbove.getCurrentItem() == 0 || mViewAbove.getCurrentItem() == 2;
+	public boolean isMainMenuShowing() {
+		return mViewAbove.getCurrentItem() == 0;
 	}
-	
+
 	/**
 	 * Checks if is the behind view showing.
 	 *
@@ -561,6 +561,15 @@ public class SlidingMenu extends RelativeLayout {
 	 */
 	public boolean isSecondaryMenuShowing() {
 		return mViewAbove.getCurrentItem() == 2;
+	}
+
+	/**
+	 * Checks if is the behind view showing.
+	 *
+	 * @return Whether or not the behind view is showing
+	 */
+	public boolean isMenuShowing() {
+		return isMainMenuShowing() || isSecondaryMenuShowing();
 	}
 
 	/**
