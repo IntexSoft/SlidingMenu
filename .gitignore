@@ -14,3 +14,10 @@ gen
 .metadata/
 .metadata
 *.project
+
+.gradle/
+build/
+/library/.idea
+*.iml
+
+local.properties
